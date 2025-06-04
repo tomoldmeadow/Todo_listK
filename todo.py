@@ -1,7 +1,12 @@
 """
 An application that allows users to manage a simple todo list.
 """
+
 from typing import Optional
+from todo_subpackage.add_task import add_task
+from todo_subpackage.view_task import view_task
+from todo_subpackage.mark_as_done import mark_as_done
+
 
 def todo(listo: Optional[list] = None) -> list:
     """
@@ -15,25 +20,6 @@ def todo(listo: Optional[list] = None) -> list:
         None: The function modifies the list in place and does not return anything.
     """
 
-    def add_task():
-        tsk: str = input("Enter task: ")
-        listo.append(tsk)
-        print("-"*50)
-
-    def view_task():
-        print("Tasks:")
-        for i, t in enumerate(listo):
-            print(f"{i+1}. {t}")
-            print("-"*50)
-
-    def mark_as_done():
-        usr_input = input("Enter task number to mark as done: ")
-        if 0 <=  int(usr_input) - 1 < len(listo):
-            listo.pop(int(usr_input) - 1)
-            print("Task marked as done.")
-        else:
-            print("Invalid task number.")
-
     while True:
         print("1. Add Task")
         print("2. View Tasks")
@@ -42,11 +28,11 @@ def todo(listo: Optional[list] = None) -> list:
         print("="*50)
         x = input("Enter your choice: ")
         if x == '1':
-            add_task()
+            add_task(listo)
         elif x == '2':
-            view_task()
+            view_task(listo)
         elif x == '3':
-            mark_as_done()
+            mark_as_done(listo)
         elif x == '4':
             print("Exiting.")
             print("-"*50)
