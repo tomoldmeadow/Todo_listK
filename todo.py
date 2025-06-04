@@ -1,4 +1,4 @@
-def todo(listo: list):
+def todo(listo: list = []) -> list:
 
     def add_task():
         tsk = input("Enter task: ")
