@@ -44,3 +44,5 @@ def todo(listo: list):
             print("-"*50)
 
     return listo
+
+todo([])
