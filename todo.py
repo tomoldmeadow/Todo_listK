@@ -1,6 +1,12 @@
-def todo(listo: list = []) -> list:
+"""
+An application that allows users to manage a simple todo list.
+"""
+from typing import Optional
+
+def todo(listo: Optional[list] = None) -> list:
     """
-    A simple todo list application that allows users to add tasks, view tasks, mark tasks as done, and exit the application.
+    A simple todo list application that allows users to add tasks, 
+    view tasks, mark tasks as done, and exit the application.
 
     Args:
         listo (list, optional): A list of tasks. Defaults to an empty list.
@@ -22,15 +28,11 @@ def todo(listo: list = []) -> list:
 
     def mark_as_done():
         usr_input = input("Enter task number to mark as done: ")
-        if 0 <=  int(usr_input) - 1 < len(listo): 
+        if 0 <=  int(usr_input) - 1 < len(listo):
             listo.pop(int(usr_input) - 1)
             print("Task marked as done.")
         else:
             print("Invalid task number.")
-
-    def exit():
-        print("Exiting.")
-        print("-"*50)
 
     while True:
         print("1. Add Task")
@@ -46,7 +48,8 @@ def todo(listo: list = []) -> list:
         elif x == '3':
             mark_as_done()
         elif x == '4':
-            exit()
+            print("Exiting.")
+            print("-"*50)
             break
         else:
             print("Invalid choice.")
