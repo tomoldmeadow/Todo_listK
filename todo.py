@@ -1,7 +1,7 @@
 def todo(listo: list = []) -> list:
 
     def add_task():
-        tsk = input("Enter task: ")
+        tsk: str = input("Enter task: ")
         listo.append(tsk)
         print("-"*50)
 
