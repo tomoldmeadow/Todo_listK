@@ -1,6 +1,5 @@
 def todo(listo: list = []) -> list:
     """
-
     A simple todo list application that allows users to add tasks, view tasks, mark tasks as done, and exit the application.
 
     Args:
